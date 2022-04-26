@@ -1,0 +1,29 @@
+allprojects {
+    group 'com.dream'
+    version '1.0-SNAPSHOT'
+
+    apply plugin: 'java'
+
+    repositories {
+        mavenLocal()
+        mavenCentral()
+        maven { url 'https://maven.aliyun.com/repository/google/' }
+        maven { url 'https://maven.aliyun.com/repository/jcenter/'}
+    }
+
+    dependencies {
+//        testCompile group: 'junit', name: 'junit', version: '4.12'
+        testImplementation group: 'junit', name: 'junit', version: '4.12'
+//        compile group: 'org.springframework', name: 'spring-context', version: '5.1.4.RELEASE'
+        implementation group: 'org.springframework', name: 'spring-context', version: '5.1.4.RELEASE'
+
+        implementation group: 'org.springframework', name: 'spring-web', version: '5.1.4.RELEASE'
+        implementation group: 'org.springframework', name: 'spring-webmvc', version: '5.1.4.RELEASE'
+        implementation group: 'javax.servlet', name: 'javax.servlet-api', version: '4.0.1'
+        implementation group: 'javax.servlet.jsp', name: 'javax.servlet.jsp-api', version: '2.2.1'
+
+
+    }
+}
+
+

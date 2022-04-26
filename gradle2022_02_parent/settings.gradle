@@ -1,0 +1,5 @@
+rootProject.name = 'gradle2022_02_parent'
+//包含子模块的信息
+include 'gradle2022_02_service'
+include 'gradle2022_02_web'
+include 'gradle2022_02_dao'
