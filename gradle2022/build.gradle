@@ -1,0 +1,29 @@
+plugins {
+    id 'java'
+}
+
+group 'com.dream'
+version '1.0-SNAPSHOT'
+
+
+/* 指定仓库的路径 mavenCentral()表示使用中央仓库，此刻项目中所需要的jar包都会默认从中央仓库中下载到本地指定目标 */
+repositories {
+    mavenCentral()
+}
+/* gradle工程所有的jar包的坐标都在 dependencies 属性内放置
+*  每一个jar包的坐标都有三个基本元素组成
+* group,name,version
+* testCompile 表示该jar包在测试的时候起作用，该属性为jar包的作用域
+* 我们在gradle里面添加坐标的时候都要带上jar包的作用域
+*
+* */
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
+    implementation group: 'org.springframework', name: 'spring-context', version: '5.0.2.RELEASE'
+
+}
+
+test {
+    useJUnitPlatform()
+}
