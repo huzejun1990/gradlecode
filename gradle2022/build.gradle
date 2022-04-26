@@ -6,8 +6,15 @@ group 'com.dream'
 version '1.0-SNAPSHOT'
 
 
-/* 指定仓库的路径 mavenCentral()表示使用中央仓库，此刻项目中所需要的jar包都会默认从中央仓库中下载到本地指定目标 */
+/* 指定仓库的路径 mavenCentral()表示使用中央仓库，此刻项目中所需要的jar包都会默认从中央仓库中下载到本地指定目标
+*     mavenLocal()    // 本地仓库
+    mavenCentral()
+    * 以上配置表示先从本地仓库依赖，如果没有再从仓库下载。
+    *   mavenCentral()
+    * 如果只配置中央仓库，表示直接从中央仓库下载jar包，但是如果指定下载的位置已经有了，就不会再次下载
+* */
 repositories {
+    mavenLocal()    // 本地仓库
     mavenCentral()
 }
 /* gradle工程所有的jar包的坐标都在 dependencies 属性内放置
